@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/dp-one-logo.jpeg";
 
 const navItems = [
   { label: "Home", path: "/" },
@@ -22,8 +23,8 @@ const Navbar = () => {
       className="fixed top-0 left-0 right-0 z-50 glass-card"
     >
       <div className="section-padding flex items-center justify-between h-20">
-        <Link to="/" className="font-display text-2xl font-bold tracking-tight text-foreground">
-          Pristine<span className="text-gradient-ocean">.</span>
+        <Link to="/" className="flex items-center gap-2">
+          <img src={logo} alt="DP One Multi-Services LLC" className="h-12 w-auto object-contain" />
         </Link>
 
         {/* Desktop */}
