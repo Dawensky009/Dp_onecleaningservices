@@ -1,13 +1,12 @@
 import { Link } from "react-router-dom";
-import { Check, Star } from "lucide-react";
+import { Check, Star, ArrowRight } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 
 const tiers = [
   {
     name: "Essential",
-    price: "$199",
-    period: "per visit",
-    desc: "For those who appreciate a consistently clean home.",
+    subtitle: "Standard Clean",
+    desc: "For those who appreciate a consistently clean home or office. Perfect for regular upkeep.",
     features: [
       "Full-home standard clean",
       "Kitchen & bathroom focus",
@@ -19,32 +18,30 @@ const tiers = [
   },
   {
     name: "Signature",
-    price: "$399",
-    period: "per visit",
-    desc: "Our most popular tier — elevated care for the discerning homeowner.",
+    subtitle: "Deep Clean",
+    desc: "Our most popular tier — elevated care for the discerning homeowner or business.",
     features: [
       "Everything in Essential",
       "Deep appliance cleaning",
-      "Linen pressing & bed making",
       "Interior window cleaning",
-      "Bespoke scent curation",
+      "Baseboard & detail cleaning",
+      "Cabinet & closet interiors",
       "Priority scheduling",
     ],
     popular: true,
   },
   {
     name: "Estate",
-    price: "$799",
-    period: "per visit",
-    desc: "The ultimate in luxury home care — white-glove service for grand residences.",
+    subtitle: "Premium Service",
+    desc: "The ultimate in professional care — comprehensive service for large homes and commercial spaces.",
     features: [
       "Everything in Signature",
-      "Full estate coverage",
-      "Art & antique dusting",
-      "Outdoor living areas",
+      "Full property coverage",
+      "Post-construction cleanup",
+      "Move-in / move-out ready",
       "Dedicated team lead",
-      "24/7 concierge support",
-      "Post-service inspection",
+      "Carpet & upholstery treatment",
+      "Same-day availability",
     ],
     popular: false,
   },
@@ -55,12 +52,12 @@ const Pricing = () => {
     <main className="pt-20">
       <section className="section-padding py-24 md:py-32 bg-background">
         <AnimatedSection className="max-w-4xl mx-auto text-center">
-          <p className="font-body text-xs tracking-[0.3em] uppercase text-primary mb-4">Investment</p>
+          <p className="font-body text-xs tracking-[0.3em] uppercase text-primary mb-4">Our Plans</p>
           <h1 className="font-display text-5xl md:text-7xl font-bold text-foreground mb-6">
-            Transparent<br /><span className="italic font-normal">Pricing</span>
+            Flexible<br /><span className="italic font-normal">Service Plans</span>
           </h1>
           <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            No hidden fees. No compromises. Choose the tier that reflects your standards.
+            Every home and business is unique. We provide custom quotes based on your space, needs, and schedule — no hidden fees, no surprises.
           </p>
           <div className="luxury-divider mt-8" />
         </AnimatedSection>
@@ -83,12 +80,9 @@ const Pricing = () => {
                   </div>
                 )}
                 <div className="mb-8">
-                  <h3 className="font-display text-2xl font-bold text-foreground mb-2">{tier.name}</h3>
-                  <p className="font-body text-sm text-muted-foreground mb-6">{tier.desc}</p>
-                  <div className="flex items-baseline gap-1">
-                    <span className="font-display text-5xl font-bold text-foreground">{tier.price}</span>
-                    <span className="font-body text-sm text-muted-foreground">/{tier.period.split(" ")[1]}</span>
-                  </div>
+                  <h3 className="font-display text-2xl font-bold text-foreground mb-1">{tier.name}</h3>
+                  <p className="font-body text-xs tracking-[0.2em] uppercase text-primary mb-4">{tier.subtitle}</p>
+                  <p className="font-body text-sm text-muted-foreground">{tier.desc}</p>
                 </div>
                 <ul className="space-y-3 mb-10 flex-1">
                   {tier.features.map((f) => (
@@ -100,14 +94,26 @@ const Pricing = () => {
                 </ul>
                 <Link
                   to="/contact"
-                  className={tier.popular ? "btn-luxury text-center" : "btn-luxury-outline text-center"}
+                  className={`${tier.popular ? "btn-luxury" : "btn-luxury-outline"} text-center flex items-center justify-center gap-2`}
                 >
-                  Get Started
+                  Get a Free Quote <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
             </AnimatedSection>
           ))}
         </div>
+
+        <AnimatedSection delay={0.5} className="max-w-3xl mx-auto mt-16 text-center">
+          <div className="glass-card rounded-2xl p-8">
+            <h3 className="font-display text-xl font-bold text-foreground mb-3">How We Price</h3>
+            <p className="font-body text-sm text-muted-foreground leading-relaxed">
+              Our pricing is customized based on the size of your space, the type of cleaning needed, and the frequency of service. Whether it's a one-time deep clean or a recurring plan, we'll work with you to find the right fit for your budget.
+            </p>
+            <Link to="/contact" className="inline-block mt-6 font-body text-sm text-primary font-semibold tracking-wide hover:underline">
+              Contact us for a personalized estimate →
+            </Link>
+          </div>
+        </AnimatedSection>
       </section>
     </main>
   );

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Check, ArrowRight, Home, Droplets, Truck, PartyPopper } from "lucide-react";
+import { Check, ArrowRight, Home, Droplets, Truck, PartyPopper, Building2 } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import bedroomImg from "@/assets/service-bedroom.jpg";
 import kitchenImg from "@/assets/service-kitchen.jpg";
@@ -11,43 +11,50 @@ import eventImg from "@/assets/service-event.jpg";
 const serviceDetails = [
   {
     icon: Home,
-    title: "White-Glove Maid Service",
-    tagline: "Perfection in every detail",
-    desc: "Our signature service delivers an unparalleled clean. Trained professionals use premium, eco-friendly products to transform every room into a sanctuary of freshness.",
-    features: ["Full-home deep clean", "Premium eco-friendly products", "Linen pressing & arrangement", "Bespoke scent curation", "Detail-obsessed team"],
+    title: "Residential Cleaning",
+    tagline: "Your home, spotless",
+    desc: "From kitchens and bathrooms to bedrooms and living rooms — we deliver a thorough, professional clean for every corner of your home using eco-friendly products.",
+    features: ["Kitchen deep clean", "Bathroom sanitization", "Bedroom & living room care", "Vacuuming & mopping", "Surface dusting & baseboard cleaning"],
     img: bedroomImg,
+  },
+  {
+    icon: Building2,
+    title: "Commercial Cleaning",
+    tagline: "A clean workspace, a productive team",
+    desc: "Professional cleaning for small to midsize offices and commercial spaces. We keep your business environment healthy, presentable, and inviting.",
+    features: ["Office & workspace cleaning", "Restroom sanitization", "Break room & common areas", "Floor care & vacuuming", "Flexible after-hours scheduling"],
+    img: kitchenImg,
   },
   {
     icon: Droplets,
     title: "Deep Sanitization",
-    desc: "Hospital-grade disinfection meets luxury care. Using advanced UV-C technology and medical-grade solutions, we eliminate 99.99% of bacteria and viruses.",
-    tagline: "Science meets serenity",
-    features: ["UV-C sterilization", "HEPA air purification", "Allergen neutralization", "Surface antimicrobial coating", "Air quality testing"],
-    img: kitchenImg,
+    tagline: "Beyond surface clean",
+    desc: "Intensive cleaning and disinfection using professional-grade solutions. Ideal for allergy sufferers, new homeowners, or seasonal refreshes.",
+    features: ["Appliance deep cleaning", "Allergen reduction", "Cabinet & closet interiors", "Tile & grout scrubbing", "Window tracks & sills"],
+    img: bathroomImg,
   },
   {
     icon: Truck,
     title: "Moving Day Prep",
-    desc: "Seamless transitions for your next chapter. We prepare your new space to move-in perfection or restore your previous home to showroom condition.",
     tagline: "Effortless transitions",
-    features: ["Pre-move deep clean", "Post-move setup", "Cabinet & closet prep", "Appliance detailing", "Window & glass polishing"],
+    desc: "Whether moving in or out, we prepare your space to perfection — ensuring it's spotless for the next chapter.",
+    features: ["Pre-move deep clean", "Post-move setup clean", "Cabinet & closet prep", "Appliance detailing", "Window & glass polishing"],
     img: bathroomImg,
   },
   {
     icon: PartyPopper,
     title: "Post-Event Restoration",
-    desc: "Return your space to pristine perfection after any occasion. From intimate dinners to grand celebrations, we handle the aftermath with grace.",
-    tagline: "Wake up to perfection",
-    features: ["Same-day service available", "Stain & spill treatment", "Furniture restoration", "Full kitchen reset", "Odor neutralization"],
+    tagline: "Wake up to a clean space",
+    desc: "After any gathering — from intimate dinners to large events — we handle the cleanup so you don't have to.",
+    features: ["Same-day service available", "Stain & spill treatment", "Full kitchen reset", "Trash & debris removal", "Odor neutralization"],
     img: eventImg,
   },
 ];
 
-// Quiz
 const quizSteps = [
-  { question: "What type of space do you have?", options: ["Apartment / Condo", "Single-Family Home", "Estate / Villa", "Commercial Space"] },
-  { question: "How many bedrooms?", options: ["Studio / 1", "2–3", "4–5", "6+"] },
-  { question: "What's your primary concern?", options: ["Regular maintenance", "Deep clean needed", "Moving in/out", "Post-event cleanup"] },
+  { question: "What type of space do you need cleaned?", options: ["Home / Apartment", "Office / Commercial", "Both Residential & Commercial", "Other"] },
+  { question: "How large is the space?", options: ["Under 1,000 sq ft", "1,000–2,000 sq ft", "2,000–4,000 sq ft", "4,000+ sq ft"] },
+  { question: "What type of cleaning do you need?", options: ["Regular maintenance", "Deep clean", "Move-in / move-out", "Post-event cleanup"] },
   { question: "How often would you like service?", options: ["One-time", "Weekly", "Bi-weekly", "Monthly"] },
 ];
 
@@ -79,10 +86,10 @@ const Services = () => {
         <AnimatedSection className="max-w-4xl mx-auto text-center">
           <p className="font-body text-xs tracking-[0.3em] uppercase text-primary mb-4">What We Offer</p>
           <h1 className="font-display text-5xl md:text-7xl font-bold text-foreground mb-6">
-            Services Crafted<br /><span className="italic font-normal">with Intention</span>
+            Professional<br /><span className="italic font-normal">Cleaning Services</span>
           </h1>
           <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Every service is designed around you — your home, your standards, your peace of mind.
+            Residential and commercial cleaning tailored to your needs — delivered by a professional, friendly team.
           </p>
           <div className="luxury-divider mt-8" />
         </AnimatedSection>
@@ -123,10 +130,10 @@ const Services = () => {
         <AnimatedSection className="max-w-2xl mx-auto text-center">
           <p className="font-body text-xs tracking-[0.3em] uppercase text-primary mb-4">Personalized</p>
           <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Bespoke Service<br /><span className="italic font-normal">Builder</span>
+            Find Your<br /><span className="italic font-normal">Perfect Plan</span>
           </h2>
           <p className="font-body text-muted-foreground mb-12 leading-relaxed">
-            Answer a few questions and we'll craft a cleaning plan tailored to your lifestyle.
+            Answer a few questions and we'll recommend the right cleaning plan for your space.
           </p>
 
           <div className="glass-card-ocean rounded-3xl p-8 md:p-12 min-h-[300px] flex flex-col items-center justify-center">
@@ -168,12 +175,12 @@ const Services = () => {
                   <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
                     <Check className="w-8 h-8 text-primary" />
                   </div>
-                  <h3 className="font-display text-2xl font-semibold text-foreground mb-3">Your Plan is Ready</h3>
+                  <h3 className="font-display text-2xl font-semibold text-foreground mb-3">We've Got You Covered</h3>
                   <p className="font-body text-muted-foreground mb-8">
-                    Based on your preferences, we recommend our <strong className="text-foreground">Signature Package</strong> with bi-weekly service.
+                    Based on your answers, we'll put together a personalized quote. Contact us to get started!
                   </p>
                   <div className="flex flex-wrap gap-4 justify-center">
-                    <Link to="/pricing" className="btn-luxury">View Pricing</Link>
+                    <Link to="/contact" className="btn-luxury">Get Your Free Quote</Link>
                     <button onClick={resetQuiz} className="btn-luxury-outline">Retake Quiz</button>
                   </div>
                 </motion.div>
