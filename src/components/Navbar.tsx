@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/dp-one-logo.jpeg";
@@ -10,19 +10,11 @@ const navItems = [
   { label: "Contact", path: "/contact" },
 ];
 
+const BOOKING_URL = "https://calendly.com/pdonalson686/new-meeting";
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
-  const navigate = useNavigate();
-
-  const handleBookNow = () => {
-    setIsOpen(false);
-    if (location.pathname === "/services") {
-      document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" });
-    } else {
-      navigate("/services#pricing");
-    }
-  };
 
   return (
     <motion.nav
@@ -51,9 +43,9 @@ const Navbar = () => {
               {item.label}
             </Link>
           ))}
-          <button onClick={handleBookNow} className="btn-luxury text-sm">
+          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="btn-luxury text-sm">
             Book Now
-          </button>
+          </a>
         </div>
 
         {/* Mobile toggle */}
@@ -90,9 +82,15 @@ const Navbar = () => {
                   {item.label}
                 </Link>
               ))}
-              <button onClick={handleBookNow} className="btn-luxury text-sm text-center mt-2 w-full">
+              <a
+                href={BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsOpen(false)}
+                className="btn-luxury text-sm text-center mt-2 w-full inline-block"
+              >
                 Book Now
-              </button>
+              </a>
             </div>
           </motion.div>
         )}

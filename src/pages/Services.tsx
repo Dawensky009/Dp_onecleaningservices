@@ -196,12 +196,14 @@ const Services = () => {
                     </li>
                   ))}
                 </ul>
-                <button
-                  onClick={() => document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" })}
+                <a
+                  href="https://calendly.com/pdonalson686/new-meeting"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="btn-luxury-outline inline-flex items-center gap-2 mt-6"
                 >
                   Get a Quote <ArrowRight className="w-4 h-4" />
-                </button>
+                </a>
               </div>
             </AnimatedSection>
           ))}
@@ -246,9 +248,14 @@ const Services = () => {
                     </li>
                   ))}
                 </ul>
-                <Link to="/contact" className={`${tier.popular ? "btn-luxury" : "btn-luxury-outline"} text-center flex items-center justify-center gap-2`}>
+                <a
+                  href="https://calendly.com/pdonalson686/new-meeting"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`${tier.popular ? "btn-luxury" : "btn-luxury-outline"} text-center flex items-center justify-center gap-2`}
+                >
                   Get a Free Quote <ArrowRight className="w-4 h-4" />
-                </Link>
+                </a>
               </div>
             </AnimatedSection>
           ))}
@@ -343,7 +350,7 @@ const Services = () => {
                     Based on your answers, we'll put together a personalized quote. Contact us to get started!
                   </p>
                   <div className="flex flex-wrap gap-4 justify-center">
-                    <Link to="/contact" className="btn-luxury">Get Your Free Quote</Link>
+                    <a href="https://calendly.com/pdonalson686/new-meeting" target="_blank" rel="noopener noreferrer" className="btn-luxury">Get Your Free Quote</a>
                     <button onClick={resetQuiz} className="btn-luxury-outline">Retake Quiz</button>
                   </div>
                 </motion.div>
@@ -361,9 +368,14 @@ const Services = () => {
             <p className="font-body text-sm text-muted-foreground leading-relaxed mb-6">
               Every home is different. Contact us for a personalized estimate — we'll tailor the perfect plan for your space, schedule, and budget.
             </p>
-            <Link to="/contact" className="btn-luxury inline-flex items-center gap-2">
+            <a
+              href="https://calendly.com/pdonalson686/new-meeting"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-luxury inline-flex items-center gap-2"
+            >
               Get Your Free Quote <ArrowRight className="w-4 h-4" />
-            </Link>
+            </a>
           </div>
         </AnimatedSection>
       </section>
