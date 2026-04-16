@@ -1,30 +1,33 @@
 
 
-## Plan: Add Real Pricing to the Pricing Page
+## Plan: Merge Services & Pricing into One Page
 
-### What changes
+### Problem
+The Services page feels empty on its own, and having two separate pages splits related content unnecessarily. Combining them creates a richer, more compelling single page.
 
-Update `src/pages/Pricing.tsx` to display actual price ranges while keeping the luxury glassmorphism design:
+### New page structure: "Services & Pricing" (at `/services`)
 
-**1. Update the three tiers with price ranges:**
-- **Essential (Standard Clean):** "From $120/visit" with note "2–3 bed / 2 bath"
-- **Signature (Deep Clean):** "From $180/visit" with note "Same home size"  
-- **Estate (Move-In/Out & Premium):** "From $200/visit" with note "Full property"
+The merged page will flow as follows:
 
-**2. Add a "Quick Estimate" section** below the tiers — a styled table/grid showing approximate pricing by bedroom count:
-- 1 bedroom → $100–$140
-- 2 bedrooms → $130–$180
-- 3 bedrooms → $150–$220
-- 4+ bedrooms → $180–$300
+1. **Hero** — "Professional Cleaning Services" with the Palm Beach County / Commercial badges from Pricing
+2. **Service Details** — The 5 alternating image+text service blocks (existing Services content)
+3. **Pricing Tiers** — The 3 pricing cards (Essential / Signature / Estate) from Pricing
+4. **Quick Estimate + Hourly Rate + Price Factors** — The two-column grid from Pricing
+5. **Find Your Perfect Plan Quiz** — The interactive quiz from Services
+6. **CTA** — "Ready for a Spotless Space?" card with quote button
 
-**3. Add an "Hourly Rate" callout:** $20–$30/hr per person
-
-**4. Update the "How We Price" section** to list what affects the price: home size, cleanliness level, pets, frequency, extras (fridge, oven, windows)
-
-**5. Add "Serving Palm Beach County" badge** and mention commercial cleaning availability
-
-**6. Keep the "Get a Free Quote" CTA** on each tier — prices shown as starting ranges, not fixed
+### Navigation changes
+- Remove "Pricing" from the navbar — keep only Home / Services / Contact
+- Redirect `/pricing` to `/services` so old links still work
 
 ### Files modified
-- `src/pages/Pricing.tsx` — all changes in this single file
+- `src/pages/Services.tsx` — merge all Pricing content into this page
+- `src/components/Navbar.tsx` — remove "Pricing" nav item
+- `src/App.tsx` — remove Pricing route, add redirect from `/pricing` to `/services`
+- `src/pages/Pricing.tsx` — delete (no longer needed)
+
+### What stays the same
+- All existing styling, glassmorphism cards, animations
+- All pricing data, service details, quiz logic
+- Footer links (will update if they reference Pricing)
 
