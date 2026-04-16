@@ -196,6 +196,12 @@ const Services = () => {
                     </li>
                   ))}
                 </ul>
+                <button
+                  onClick={() => document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" })}
+                  className="btn-luxury-outline inline-flex items-center gap-2 mt-6"
+                >
+                  Get a Quote <ArrowRight className="w-4 h-4" />
+                </button>
               </div>
             </AnimatedSection>
           ))}
@@ -203,7 +209,7 @@ const Services = () => {
       </section>
 
       {/* Pricing Tiers */}
-      <section className="section-padding py-24 bg-background">
+      <section id="pricing" className="section-padding py-24 bg-background">
         <AnimatedSection className="max-w-4xl mx-auto text-center mb-12">
           <p className="font-body text-xs tracking-[0.3em] uppercase text-primary mb-4">Our Plans</p>
           <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/dp-one-logo.jpeg";
@@ -13,6 +13,16 @@ const navItems = [
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleBookNow = () => {
+    setIsOpen(false);
+    if (location.pathname === "/services") {
+      document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate("/services#pricing");
+    }
+  };
 
   return (
     <motion.nav
@@ -41,9 +51,9 @@ const Navbar = () => {
               {item.label}
             </Link>
           ))}
-          <Link to="/contact" className="btn-luxury text-sm">
+          <button onClick={handleBookNow} className="btn-luxury text-sm">
             Book Now
-          </Link>
+          </button>
         </div>
 
         {/* Mobile toggle */}
@@ -80,9 +90,9 @@ const Navbar = () => {
                   {item.label}
                 </Link>
               ))}
-              <Link to="/contact" onClick={() => setIsOpen(false)} className="btn-luxury text-sm text-center mt-2">
+              <button onClick={handleBookNow} className="btn-luxury text-sm text-center mt-2 w-full">
                 Book Now
-              </Link>
+              </button>
             </div>
           </motion.div>
         )}
