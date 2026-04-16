@@ -7,7 +7,6 @@ import logo from "@/assets/dp-one-logo.jpeg";
 const navItems = [
   { label: "Home", path: "/" },
   { label: "Services", path: "/services" },
-  { label: "Pricing", path: "/pricing" },
   { label: "Contact", path: "/contact" },
 ];
 
