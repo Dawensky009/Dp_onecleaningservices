@@ -45,7 +45,7 @@ const Index = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="h-20 md:h-24 w-auto object-contain mb-6 brightness-0 invert"
+            className="h-24 md:h-32 w-auto object-contain mb-6"
           />
           <motion.p
             initial={{ opacity: 0, y: 20 }}
