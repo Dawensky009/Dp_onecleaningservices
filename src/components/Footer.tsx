@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import logo from "@/assets/dp-one-logo.jpeg";
+import logo from "@/assets/dp-one-logo-transparent.png";
 
 const Footer = () => (
   <footer className="bg-foreground text-primary-foreground section-padding py-16">
     <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-12">
       <div>
-        <img src={logo} alt="DP One Multi-Services LLC" className="h-14 w-auto object-contain mb-4 brightness-0 invert" />
+        <img src={logo} alt="DP One Multi-Services LLC" className="h-16 w-auto object-contain mb-4 brightness-0 invert" />
         <p className="font-body text-sm text-primary-foreground/60 leading-relaxed">
           Professional cleaning services for residential and commercial spaces.
         </p>

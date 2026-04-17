@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Sparkles, Shield, Clock, Star, Leaf, CalendarCheck } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import heroImg from "@/assets/hero-interior.jpg";
+import logo from "@/assets/dp-one-logo-transparent.png";
 import bedroomImg from "@/assets/service-bedroom.jpg";
 import kitchenImg from "@/assets/service-kitchen.jpg";
 import bathroomImg from "@/assets/service-bathroom.jpg";
@@ -38,6 +39,14 @@ const Index = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-foreground/70 via-foreground/40 to-transparent" />
         </div>
         <div className="relative z-10 section-padding max-w-3xl pt-32 pb-20">
+          <motion.img
+            src={logo}
+            alt="DP One Multi-Services LLC"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+            className="h-20 md:h-24 w-auto object-contain mb-6 brightness-0 invert"
+          />
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
