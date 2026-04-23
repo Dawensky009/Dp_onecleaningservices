@@ -252,12 +252,12 @@ const Services = () => {
                   ))}
                 </ul>
                 <a
-                  href={tier.name === "Estate" ? "https://buy.stripe.com/3cIaEQ66UeOKgV10Tc6sw00" : "https://calendly.com/pdonalson686/new-meeting"}
+                  href={tier.checkoutUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`${tier.popular ? "btn-luxury" : "btn-luxury-outline"} text-center flex items-center justify-center gap-2`}
                 >
-                  {tier.name === "Estate" ? "Book & Pay Now" : "Get a Free Quote"} <ArrowRight className="w-4 h-4" />
+                  Book & Pay Now <ArrowRight className="w-4 h-4" />
                 </a>
               </div>
             </AnimatedSection>
