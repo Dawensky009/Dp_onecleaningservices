@@ -67,6 +67,7 @@ const tiers = [
       "Trash removal",
     ],
     popular: false,
+    checkoutUrl: "https://buy.stripe.com/fZu6oA3YM5ea207gSa6sw02",
   },
   {
     name: "Signature",
@@ -84,6 +85,7 @@ const tiers = [
       "Priority scheduling",
     ],
     popular: true,
+    checkoutUrl: "https://buy.stripe.com/5kQ14g66U8qm7kr59s6sw01",
   },
   {
     name: "Estate",
@@ -102,6 +104,7 @@ const tiers = [
       "Same-day availability",
     ],
     popular: false,
+    checkoutUrl: "https://buy.stripe.com/3cIaEQ66UeOKgV10Tc6sw00",
   },
 ];
 
